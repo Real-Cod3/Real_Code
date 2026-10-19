@@ -215,6 +215,8 @@ body{
 
 .Wrapper{
 
+    position: relative;
+
     display: flex;
 
     justify-content: center;
@@ -224,6 +226,8 @@ body{
     min-height: 100vh;
 
     background: var(--bg-color);
+
+    z-index: 200000000000;
 
 }
 
@@ -922,7 +926,7 @@ header{
 
 .descriptionTag{
 
-    margin-top: 15px;
+    margin-top: 5px;
 
     font-size: 25px;
 
@@ -1576,8 +1580,7 @@ header{
     }
 
 
-
-    .skillFlex{
+        .skillFlex{
 
         display: flex;
 
@@ -1593,22 +1596,95 @@ header{
 
     }
 
+
+    
+/* Project cards */
+.flexSkill {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-width: 0;
+    width: min(20rem, calc(100% - 2rem));
+    padding-bottom: 1.25rem;
+    color: var(--text-color);
+    border: 1px solid var(--section-bg);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.flexSkill .writeupSkill {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    margin: 0 12px;
+}
+
+.flexSkill .writeupSkill h1 {
+    font-size: 25px;
+    margin: 0 0 12px;
+    text-align: center;
+}
+
+.flexSkill .writeupSkill p {
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
+    overflow-wrap: anywhere;
+}
+
+/* Technology labels */
+.flexSkill .skillcon {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 0.75rem 0.5rem;
+    height: auto;
+    margin-top: auto;
+}
+
+.flexSkill .skillcon .skilltool {
+    width: auto;
+    height: auto;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-wrap: anywhere;
+}
+
+/* Request Now button */
+.flexSkill .writeupSkill .btnb {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 0;
+}
+
+.flexSkill .writeupSkill .btnb button {
+    box-sizing: border-box;
+    width: 8rem;
+    min-height: 2.5rem;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    color: var(--btn-text);
+    text-shadow: 0 0 12px rgba(0, 234, 255, 0.35);
+    background: var(--btn);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 234, 255, 0.18);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.flexSkill .writeupSkill .btnb button:hover {
+    background: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+
+
+
 /* skill container */
-
-    .flexSkill{
-
-        border: 1px solid var(--section-bg);
-
-        box-shadow: var(--section-bg);
-
-        width: 20rem;
-
-        /* height: 35rem; */
-        color: var(--text-color);
-
-        transition: all 0.5s ease;
-
-    }
 
 
 
@@ -1684,128 +1760,6 @@ header{
 
 
 
-    .flexSkill .writeupSkill{
-
-    margin: 0 12px;
-
-    display: block;
-
-    gap: 4px;
-
-    }
-
-
-
-    .flexSkill .writeupSkill h1{
-
-        font-size: 25px;
-
-        margin-bottom: 12px;
-
-        text-align: center;
-
-    }
-
-
-
-    .flexSkill .writeupSkill p{
-
-        margin-bottom: 2rem;
-
-      width: 19rem;
-
-    }
-
-
-
-    .flexSkill .skillcon{
-
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        height: 2rem;
-
-        top: 27vh;
-
-    }
-
-
-
-    .flexSkill .skillcon .skilltool{
-
-        width: fit-content;
-
-        height: 2px;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-        color: var(--text-color);
-
-
-
-    }
-
-
-
-    .btnb{
-
-        margin-top: 3vh;
-
-        margin-bottom: 2rem;
-
-    }
-
-
-
-    #pen{
-
-        margin-top: 20px;
-
-        cursor: pointer;
-
-    }
-
-    #opened{
-
-        margin-top: 35px;
-
-        cursor: pointer;
-
-    }
-
-
-
-    .flexSkill .writeupSkill .btnb button{
-
-        color: var(--primary-cyan);
-
-    text-shadow: 0 0 25px rgb(159, 255, 255),
-
-    0 0 25px rgb(159, 255, 255);
-
-    background: rgba(255,255,255,0.03);
-
-    box-shadow: 0 0 8px rgba(0, 234, 255, 0.18);
-
-    border: none;
-
-        margin-left: 75px;
-
-        width: 8rem;
-
-        height: 2rem;
-
-        transition: all 0.5s ease-in;
-
-    }
-
-
-
     /* Profession skill */
 
 
@@ -1823,6 +1777,8 @@ header{
         flex-wrap: wrap;
 
         padding: 45px;
+
+        color: var(--text-color);
 
     }
 
@@ -2338,7 +2294,7 @@ header{
 
     width: 100%;
 
-    padding: 1rem;
+    padding: 12rem;
 
     box-sizing: border-box;
 
@@ -3025,7 +2981,7 @@ header{
 
     .footer ul li a:hover{
 
-     border-bottom: 3px solid cyan;
+     border-bottom: 3px solid var(--text-color);
 
 }
 
@@ -3340,6 +3296,25 @@ color: var(--text-color);
     }
 }
 
+
+/* Smaller screens */
+@media (max-width: 480px) {
+    .skillFlex {
+        padding: 0 0.75rem;
+        gap: 1.5rem;
+    }
+
+    .flexSkill {
+        width: 100%;
+        max-width: 22rem;
+    }
+
+    .flexSkill .skillcon {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
 /* Small phones */
 @media (max-width: 380px) {
     .nav {
@@ -3352,3 +3327,4 @@ color: var(--text-color);
         font-size: 19px;
     }
 }
+
