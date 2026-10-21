@@ -14,14 +14,28 @@ function mouseCursor(e){
     outerCursor.style.top = `${yMovement}px`
 }
 
-//  Script for Loader to Appear When Entering The Page Only
+// Script for Full-Screen Page Loader
 
-        let loader = document.getElementById('Wrapper')
+const loader = document.getElementById("Wrapper");
 
-        window.addEventListener("load", function(){
-            loader.style.display = "none"
-        })
+document.body.classList.add("is-loading");
 
+function hideLoader() {
+    if (!loader) return;
+
+    loader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+}
+
+if (document.readyState === "complete") {
+    hideLoader();
+} else {
+    window.addEventListener("load", hideLoader, {
+        once: true
+    });
+}
+
+// Your existing theme toggle script
             const themeToggle = document.getElementById("themeToggle");
     const body = document.body;
 

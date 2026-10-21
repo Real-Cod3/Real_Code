@@ -290,18 +290,99 @@ body.is-loading {
     50% {
         width: 20px;
         height: 20px;
-    }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    .Wrapper {
-        transition: none;
     }
 
-    .loader .loading {
-        animation: none;
-    }
 }
+
+
+
+/* Custom Cursor */
+
+.inner-cursor{
+
+    position: fixed;
+
+    left: 10px;
+
+    width: 10px;
+
+    height: 10px;
+
+    transform: translate(-50%, -50%);
+
+    background: var(--text-color);
+
+    box-shadow: 0 0 25px var(--text-color),
+
+                0 0 25px var(--text-color),
+
+                0 0 25px var(--text-color);
+
+    mix-blend-mode: normal;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transition: width 0.5s height 0.5s;
+
+}
+
+
+
+.outer-cursor{
+
+    position: fixed;
+
+    left: 10px;
+
+    width: 25px;
+
+    height: 25px;
+
+    z-index: 9998;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid var(--text-color);
+
+        box-shadow: 0 0 25px var(--text-color),
+
+                0 0 25px var(--text-color),
+
+                0 0 25px var(--text-color);
+
+    mix-blend-mode: normal;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    transition: 0.1s;
+
+}
+
+
+
+
+
+
+
+
+
+    /* Fade In Animation: Smoothly transitions the element from invisible to visible. Customize as needed. */
+
+    @keyframes fadeIn {
+
+      0% { opacity: 0; }
+
+      100% { opacity: 1; }
+
+    }
+
 
 
     /* Custom Scroll Bar */
@@ -3237,3 +3318,13 @@ color: var(--text-color);
     }
 }
 
+
+@media (prefers-reduced-motion: reduce) {
+    .Wrapper {
+        transition: none;
+    }
+
+    .loader .loading {
+        animation: none;
+    }
+}
