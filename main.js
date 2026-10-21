@@ -77,7 +77,9 @@ function mouseCursor(e){
         // Request Now
 const close = document.getElementById("close");
 
-const opened = document.getElementById("request_btn");
+const pen = document.getElementById("request_btn");
+const open = document.getElementById("open_btn");
+const opened = document.getElementById("opened_btn");
 
 const modal = document.getElementById("modal");
 
@@ -86,11 +88,17 @@ close.addEventListener("click", ()=> {
     modal.style.display = 'none'
 });
 // Add for request button
+pen.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
 
 opened.addEventListener('click', () => {
             modal.style.display = 'flex';
         });
 
+open.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
 // when clicked outside the form
         window.addEventListener('click', (e) => {
             if (e.target === modal) {
